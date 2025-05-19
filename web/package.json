@@ -9,7 +9,8 @@
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npm install sharp"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -48,6 +49,7 @@
     "react-hook-form": "^7.53.1",
     "react-qr-code": "^2.0.12",
     "react-syntax-highlighter": "^15.5.0",
+    "sharp": "^0.33.2",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^11.0.3",
