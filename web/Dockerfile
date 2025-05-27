@@ -65,7 +65,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/package.json ./
 COPY --from=builder --chown=nextjs:nodejs /app/pnpm-lock.yaml ./
 
 # Install only production dependencies, including Prisma, and generate Prisma client
-RUN pnpm install --prod --frozen-lockfile && \
+RUN pnpm add sharp && \
+    pnpm install --prod --frozen-lockfile && \
     pnpm prisma generate
 
 # Switch to non-root user
