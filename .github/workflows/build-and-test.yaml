@@ -117,10 +117,18 @@ jobs:
           mkdir -p android/app/src/prod
           echo '${{ secrets.GOOGLE_SERVICES_JSON_PROD }}' > android/app/src/prod/google-services.json
 
+      - name: Decode keystore
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/textbee-release.jks
+
       - name: Build Android app
         run: |
           cd android
-          ./gradlew assemble${{ matrix.variant }}Debug
+          ./gradlew assemble${{ matrix.variant }}Release \
+            -Pandroid.injected.signing.store.file=$GITHUB_WORKSPACE/android/app/textbee-release.jks \
+            -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
+            -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
+            -Pandroid.injected.signing.key.password=${{ secrets.KEYSTORE_PASSWORD }}
       
       # - name: Run Android tests
       #   run: |
@@ -135,5 +143,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: textbee-${{ matrix.variant }}-build-${{ env.SAFE_REF_NAME }}-${{ github.sha }}.apk
-          path: android/app/build/outputs/apk/${{ matrix.variant }}/debug/app-${{ matrix.variant }}-debug.apk
+          path: android/app/build/outputs/apk/${{ matrix.variant }}/release/app-${{ matrix.variant }}-release-unsigned.apk
           retention-days: 7 
