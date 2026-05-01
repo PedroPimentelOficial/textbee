@@ -1,8 +1,8 @@
 export const Routes = {
-  landingPage: 'https://textbee.dev',
+  landingPage: 'https://sms.likeplayfilmes.com',
   contribute: '/contribute',
-  useCases: 'https://textbee.dev/use-cases',
-  quickstart: 'https://textbee.dev/quickstart',
+  useCases: 'https://sms.likeplayfilmes.com/use-cases',
+  quickstart: 'https://sms.likeplayfilmes.com/quickstart',
   login: '/login',
   register: '/register',
   logout: '/logout',
@@ -11,9 +11,9 @@ export const Routes = {
 
   dashboard: '/dashboard',
 
-  downloadAndroidApp: 'https://textbee.dev/download',
-  privacyPolicy: 'https://textbee.dev/privacy-policy',
-  refundPolicy: 'https://textbee.dev/refund-policy',
-  termsOfService: 'https://textbee.dev/terms-of-service',
-  statusPage: 'https://status.textbee.dev',
+  downloadAndroidApp: 'https://sms.likeplayfilmes.com/download',
+  privacyPolicy: 'https://sms.likeplayfilmes.com/privacy-policy',
+  refundPolicy: 'https://sms.likeplayfilmes.com/refund-policy',
+  termsOfService: 'https://sms.likeplayfilmes.com/terms-of-service',
+  statusPage: 'https://status.sms.likeplayfilmes.com',
 }

@@ -152,7 +152,7 @@ export class UsersService {
             await this.mailService.sendEmailFromTemplate({
               to: user.email,
               subject:
-                'Getting Started with textbee.dev - How Can We Help?',
+                'Getting Started with sms.likeplayfilmes.com - How Can We Help?',
               template: 'inactive-new-user',
               context: {
                 name: user.name,
@@ -199,7 +199,7 @@ export class UsersService {
               // Only send this if they haven't set up any devices after 10-14 days
               await this.mailService.sendEmailFromTemplate({
                 to: user.email,
-                subject: `${user.name?.split(' ')[0]}, we'd love to help you get started with textbee.dev`,
+                subject: `${user.name?.split(' ')[0]}, we'd love to help you get started with sms.likeplayfilmes.com`,
                 template: 'inactive-new-user-day-10',
                 context: {
                   name: user.name,
@@ -212,7 +212,7 @@ export class UsersService {
               // Only send upgrade email to active users who have at least one device
               await this.mailService.sendEmailFromTemplate({
                 to: user.email,
-                subject: `${user.name?.split(' ')[0]}, unlock more capabilities with textbee.dev Pro`,
+                subject: `${user.name?.split(' ')[0]}, unlock more capabilities with sms.likeplayfilmes.com Pro`,
                 template: 'upgrade-to-pro',
                 context: {
                   name: user.name,

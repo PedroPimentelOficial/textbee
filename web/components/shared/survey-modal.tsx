@@ -148,7 +148,7 @@ export const SurveyModal = () => {
                 marginHeight={0}
                 marginWidth={0}
                 className='rounded-lg'
-                title='textbee.dev feedback survey'
+                title='sms.likeplayfilmes.com feedback survey'
               >
                 Loading...
               </iframe>
@@ -169,7 +169,7 @@ export const SurveyModal = () => {
             size='sm'
             onClick={() => {
               const iframe = document.querySelector(
-                'iframe[title="textbee.dev feedback survey"]'
+                'iframe[title="sms.likeplayfilmes.com feedback survey"]'
               ) as HTMLIFrameElement
               if (iframe) {
                 iframe.focus()

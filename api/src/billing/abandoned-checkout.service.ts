@@ -163,14 +163,14 @@ export class AbandonedCheckoutService {
         name: user.name?.split(' ')?.[0] || 'there',
         email: user.email,
         checkoutUrl:
-          'https://app.textbee.dev/checkout/pro' /*session.checkoutUrl*/,
+          'https://app.sms.likeplayfilmes.com/checkout/pro' /*session.checkoutUrl*/,
         planName: this.extractPlanNameFromPayload(session.payload),
         expiresAt: session.expiresAt,
       }
 
       await this.mailService.sendEmailFromTemplate({
         to: user.email,
-        from: 'support@textbee.dev',
+        from: 'support@sms.likeplayfilmes.com',
         subject: emailConfig.subject,
         template: emailConfig.template,
         context: emailContext,

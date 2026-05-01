@@ -82,7 +82,7 @@ export class AuthService {
         subject: 'Welcome to TextBee - Lets get started!',
         template: 'welcome-1',
         context: { name: user.name },
-        from: 'vernu vernu@textbee.dev',
+        from: 'vernu vernu@sms.likeplayfilmes.com',
       })
     }
 
@@ -143,7 +143,7 @@ export class AuthService {
       subject: 'Welcome to TextBee - Lets get started!',
       template: 'welcome-1',
       context: { name: user.name },
-      from: 'vernu vernu@textbee.dev',
+      from: 'vernu vernu@sms.likeplayfilmes.com',
     })
 
     this.sendEmailVerificationEmail(user).catch((e) => {
@@ -197,11 +197,11 @@ export class AuthService {
     })
     await passwordReset.save()
 
-    const resetLink = `${process.env.FRONTEND_URL || 'https://textbee.dev'}/reset-password?email=${encodeURIComponent(user.email)}&otp=${otp}`
+    const resetLink = `${process.env.FRONTEND_URL || 'https://sms.likeplayfilmes.com'}/reset-password?email=${encodeURIComponent(user.email)}&otp=${otp}`
 
     await this.mailService.sendEmailFromTemplate({
       to: user.email,
-      subject: 'textbee.dev - Password Reset',
+      subject: 'sms.likeplayfilmes.com - Password Reset',
       template: 'password-reset-request',
       context: { name: user.name, resetLink, otp },
     })
@@ -236,7 +236,7 @@ export class AuthService {
 
     this.mailService.sendEmailFromTemplate({
       to: user.email,
-      subject: 'textbee.dev - Password Reset',
+      subject: 'sms.likeplayfilmes.com - Password Reset',
       template: 'password-reset-success',
       context: { name: user.name },
     })
@@ -300,11 +300,11 @@ export class AuthService {
     })
     await emailVerification.save()
 
-    const verificationLink = `${process.env.FRONTEND_URL || 'https://textbee.dev'}/verify-email?userId=${user._id}&verificationCode=${verificationCode}`
+    const verificationLink = `${process.env.FRONTEND_URL || 'https://sms.likeplayfilmes.com'}/verify-email?userId=${user._id}&verificationCode=${verificationCode}`
 
     await this.mailService.sendEmailFromTemplate({
       to: user.email,
-      subject: 'textbee.dev - Verify Email',
+      subject: 'sms.likeplayfilmes.com - Verify Email',
       template: 'verify-email',
       context: {
         name: user.name,

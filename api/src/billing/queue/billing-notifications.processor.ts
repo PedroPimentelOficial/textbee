@@ -50,11 +50,11 @@ export class BillingNotificationsProcessor {
     }
 
     const subject = this.subjectForType(payload.type, payload.title)
-    const ctaUrlBase = process.env.FRONTEND_URL || 'https://app.textbee.dev'
+    const ctaUrlBase = process.env.FRONTEND_URL || 'https://app.sms.likeplayfilmes.com'
     const isEmailVerification = payload.type === 'email_verification_required'
     const ctaUrl = isEmailVerification
       ? `${ctaUrlBase}/dashboard/account`
-      : 'https://textbee.dev/#pricing'
+      : 'https://sms.likeplayfilmes.com/#pricing'
     const ctaLabel = isEmailVerification ? 'Verify your email' : 'View plans & pricing'
 
     await this.mailService.sendEmailFromTemplate({
@@ -67,7 +67,7 @@ export class BillingNotificationsProcessor {
         message: payload.message,
         ctaLabel,
         ctaUrl,
-        brandName: 'textbee.dev',
+        brandName: 'sms.likeplayfilmes.com',
       },
       from: undefined,
     })
